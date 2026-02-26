@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Library Loans System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/search.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="site-logo">
+      <img src="assets/logo.svg" alt="Library Loans System logo">
+      <span>Library Loans System</span>
+    </a>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav-bar">
+  <div class="nav-left">
+    <a href="index.html">Home</a>
+    <a href="search.html">Search</a>
+    <a href="member.html">My Account</a>
+  </div>
+
+  <button id="logoutBtn" class="logout-btn">Logout</button>
+</nav>
+
+
+  <main>
+    <!-- Search section -->
+    <section class="search-area">
+      <h2>Search For Books</h2>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by title, author, or ISBN..." />
+        <span class="clear-icon" id="clearBtn">✖</span>
+      </div>
+    </section>
+
+    <div class="page-line"></div>
+
+    <!-- Search results section -->
+    <section class="search-results">
+
+      <p id="resultsCount" class="results-count"></p>
+
+      <div class="book-grid" id="resultsGrid">
+        <!-- Book items injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Library Loans Management System
+  </footer>
+
+  <!-- Link to JS -->
+  <script src="js/search.js"></script>
+</body>
+</html>

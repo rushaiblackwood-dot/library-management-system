@@ -1,0 +1,76 @@
+main {
+    max-width: 1400px;
+    width: 75%;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+  
+.content-card {
+    background-color: #fff8f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.section-title {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 22px;
+}
+
+table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+th{
+    text-align: left;
+}
+
+td {
+    text-align: middle;
+    padding: 16px;
+}
+
+th, td {
+    padding: 16px 20px;
+}
+
+td:first-child,
+th:first-child {
+    text-align: left;
+    font-weight: bold;
+    padding-left: 40px;
+    width: 45%;
+}
+
+td:not(:first-child),
+th:not(:first-child) {
+    text-align: center;
+}
+
+.status-ok {
+    color: #2e7d32;
+    font-weight: bold;
+}
+  
+.status-overdue {
+    color: #c62828;
+    font-weight: bold;
+}
+
+button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+  
+button:hover {
+    background-color: #000;
+}

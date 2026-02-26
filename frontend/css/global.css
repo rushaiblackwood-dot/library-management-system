@@ -1,0 +1,88 @@
+/* general body styles */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f6f1e7;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* header styles */
+header {
+  background-color: #f6f1e7;
+  padding: 12px 24px;
+  border-bottom: 2px solid #000;
+  position: relative;
+  z-index: 2;
+}
+
+/* logo inside header */
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-logo img {
+  height: 32px;
+  width: auto;
+}
+
+/* navigation bar */
+nav {
+  background-color: #d8d1c3;
+  padding: 10px 24px;
+  border-bottom: 2px solid #000;
+  position: relative;
+  z-index: 3;
+
+  /* ✅ NEW: enable left/right alignment */
+  display: flex;
+  align-items: center;
+}
+
+/* navigation links */
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex: 1;
+}
+
+/* footer */
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  border-top: 2px solid #333;
+}
+
+/* Logout button on right */
+.logout-btn {
+  margin-left: auto; /* ✅ pushes logout to right */
+  background-color: #222;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #444;
+}

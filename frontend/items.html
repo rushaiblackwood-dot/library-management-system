@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Item Details | Library Loans System</title>
+
+  <!-- Reuse SAME styling as home -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      background-color: #f6f1e7;
+    }
+
+    .page-container {
+      max-width: 900px;
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    .item-card {
+      background: #f9f4ea;
+      padding: 30px;
+      border-radius: 12px;
+      display: inline-block;
+      min-width: 420px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .item-card img {
+      width: 180px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+
+    .item-details p {
+      margin: 6px 0;
+    }
+
+    .status {
+      font-weight: bold;
+      color: green;
+      margin-top: 8px;
+    }
+
+    select, input {
+      padding: 6px;
+      width: 200px;
+      margin-top: 6px;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 8px 18px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER (MATCHES HOME) -->
+<header class="header">
+  <div class="logo">
+     <strong>Library Loans System</strong>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html">Search</a>
+    <a href="#">My Account</a>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </nav>
+</header>
+
+<!-- PAGE CONTENT -->
+<div class="page-container">
+  <h2>Item Details</h2>
+
+  <div class="item-card">
+    <img id="itemImage" src="assets/logo.svg" alt="Book cover">
+
+    <h3 id="itemTitle">Loading...</h3>
+
+    <div class="item-details">
+      <p><strong>Author:</strong> <span id="itemAuthor"></span></p>
+      <p><strong>Type:</strong> <span id="itemType"></span></p>
+      <p class="status" id="itemStatus"></p>
+    </div>
+
+    <hr>
+
+    <label><strong>Action:</strong></label><br>
+    <select id="actionSelect">
+      <option value="borrow">Borrow</option>
+      <option value="reserve">Reserve</option>
+    </select><br>
+
+    <label><strong>Member ID:</strong></label><br>
+    <input type="number" id="memberIdInput" placeholder="Enter Member ID"><br>
+
+    <button onclick="submitAction()">Submit</button>
+    <div class="error" id="errorMessage"></div>
+  </div>
+</div>
+
+<script>
+const API_BASE = "http://127.0.0.1:5000";
+
+function getImageForTitle(title) {
+  if (!title) return "assets/logo.svg";
+  title = title.toLowerCase();
+
+  if (title.includes("kite runner")) return "assets/kite-runner.png";
+  if (title.includes("mockingbird")) return "assets/mockingbird.png";
+  if (title.includes("silent patient")) return "assets/silentpatient.png";
+  if (title.includes("little women")) return "assets/littlewomen.png";
+  if (title.includes("maid")) return "assets/themaid.png";
+
+  return "assets/logo.svg";
+}
+
+async function loadItem() {
+  const params = new URLSearchParams(window.location.search);
+  const itemId = params.get("id");
+
+  if (!itemId) {
+    document.getElementById("itemTitle").textContent = "No item selected";
+    return;
+  }
+
+  try {
+    const res = await fetch(`${API_BASE}/items/${itemId}`);
+    const item = await res.json();
+
+    document.getElementById("itemTitle").textContent = item.Title;
+    document.getElementById("itemAuthor").textContent = item.Author;
+    document.getElementById("itemType").textContent = item.Type;
+    document.getElementById("itemStatus").textContent =
+      item.IsAvailable ? "Available" : "Unavailable";
+
+    document.getElementById("itemImage").src =
+      getImageForTitle(item.Title);
+
+  } catch {
+    document.getElementById("itemTitle").textContent = "Item not found";
+  }
+}
+
+async function submitAction() {
+  const params = new URLSearchParams(window.location.search);
+  const itemId = params.get("id");
+  const memberId = document.getElementById("memberIdInput").value;
+  const action = document.getElementById("actionSelect").value;
+  const errorDiv = document.getElementById("errorMessage");
+
+  errorDiv.textContent = "";
+
+  if (!memberId) {
+    errorDiv.textContent = "Please enter a Member ID.";
+    return;
+  }
+
+  let url, body;
+
+  if (action === "borrow") {
+    url = `${API_BASE}/loans`;
+    body = { copy_id: 1, member_id: Number(memberId) };
+  } else {
+    url = `${API_BASE}/reservations`;
+    body = { item_id: Number(itemId), member_id: Number(memberId) };
+  }
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+
+  const data = await res.json();
+  if (!res.ok) {
+    errorDiv.textContent = data.error;
+    return;
+  }
+
+  alert("Action successful");
+  loadItem();
+}
+
+loadItem();
+</script>
+
+</body>
+</html>

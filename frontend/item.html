@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Item Details - Library Loans System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/item.css" />
+</head>
+<body>
+
+  <!-- header -->
+  <header>
+    <a href="index.html" class="site-logo">
+      <img src="assets/logo.svg" alt="Library Loans System logo">
+      <span>Library Loans System</span>
+    </a>
+  </header>
+
+  <!-- navigation -->
+ <nav class="nav-bar">
+  <div class="nav-left">
+    <a href="index.html">Home</a>
+    <a href="search.html">Search</a>
+    <a href="member.html">My Account</a>
+  </div>
+
+  <button id="logoutBtn" class="logout-btn">Logout</button>
+</nav>
+
+
+  <!-- main content -->
+  <main>
+
+    <!-- item card  -->
+    <section class="item-card">
+      <img id="itemImage" src="assets/book-placeholder.png" alt="book cover">
+  
+      <div class="item-text">
+        <h2 id="itemTitle">Loading title...</h2>
+        <p id="itemAuthor">Author: loading...</p>
+        <p id="itemType">Type: loading...</p>
+      </div>
+    </section>
+  
+    <!-- two column layout -->
+    <div class="two-column">
+  
+      <!-- copies card -->
+      <section class="content-card">
+        <h3>Copies</h3>
+  
+        <table>
+          <thead>
+            <tr>
+              <th>Branch</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="copiesTable">
+            <!-- added by js -->
+          </tbody>
+        </table>
+      </section>
+  
+      <!-- reservations card -->
+      <section class="content-card">
+        <h3>Reservations</h3>
+  
+        <p class="helper-text">
+          If all copies are unavailable, you can reserve this item.
+        </p>
+  
+        <ul id="reservationList"></ul>
+  
+        <button id="reserveBtn">Reserve This Item</button>
+      </section>
+  
+    </div>
+  
+    <!-- message -->
+    <p id="itemMessage"></p>
+  
+  </main>
+
+  <!-- footer -->
+  <footer>
+    © 2025 Library Loans Management System
+  </footer>
+
+  <!-- link to js -->
+  <script src="js/item.js"></script>
+
+</body>
+</html>

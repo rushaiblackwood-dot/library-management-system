@@ -1,0 +1,17 @@
+.header {
+  background-color: #e6dfd1;
+  padding: 12px 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 32px;   /* header size */
+  width: auto;
+}

@@ -1,0 +1,150 @@
+/* main content */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* divider line */
+.page-line {
+  border-top: 2px solid #333;
+  margin: 60px 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* search area */
+.search-area {
+  margin-top: 40px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.search-box {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 16px 40px 16px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+}
+
+.search-box .clear-button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+  display: none;
+}
+
+.search-box .clear-button:hover {
+  color: #333;
+}
+
+/* available items section */
+.recent-area {
+  margin-bottom: 80px;
+}
+
+.sub-text {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* book row */
+.book-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* arrow buttons */
+.arrow-btn {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.arrow-btn:hover {
+  background: rgba(200, 200, 200, 0.9);
+}
+
+/* book list (scrollable) */
+.book-list {
+  display: flex;
+  gap: 32px;
+  max-width: 700px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  overflow-x: hidden;  /* hide scrollbar */
+}
+
+/* individual book */
+.book-item {
+  text-decoration: none;
+  width: 150px;
+  display: block;
+  color: inherit;
+  text-align: left;
+}
+
+.book-item img {
+  width: 130px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease;
+}
+
+.book-item img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book-item h4 {
+  font-size: 14px;
+  margin: 4px 0 2px 0;
+}
+
+.book-item p {
+  font-size: 13px;
+  color: #555;
+  margin: 0 0 2px 0;
+}
+
+.book-item span {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  margin: 5px 0 2px 0;
+}
