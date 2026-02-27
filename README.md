@@ -1,8 +1,4 @@
 # CMP5387 Library Loans Management System
-**Module:** CMP5387 Backend Web Services Development and Database Engineering
-**Author1:** Abraham Sharkey, S24142251
-**Author2:** Malaika Noor, S24120358 
-
 ## Project Overview
 This project implements a Library Loans Management System designed to solve common problems faced by libraries operating across multiple branches. These include inconsistent availability information, manual enforcement of borrowing rules, and difficulty tracking loans, reservations, and overdue items.
 
@@ -86,15 +82,6 @@ Reservations are based on queue order rather than predicted return times. The re
 
 ---
 
-## Testing
-The system was tested through the frontend interface, with frequent resets of the database state to verify:
-* Borrowing workflows
-* Reservation queuing
-* Real-time availability updates
-* Overdue detection logic
-
----
-
 ## Future Improvements
 * Implementation of secure JWT or Session authentication.
 * Introduction of distinct Staff and Member roles.
@@ -102,20 +89,8 @@ The system was tested through the frontend interface, with frequent resets of th
 * Enhanced frontend features including advanced filtering and pagination.
 * Automatic reservation fulfilment logic when an item is checked back in.
 
+## Screenshots
+
+
+
 ---
-
-## Assessment Notes
-All business logic is implemented in the backend; the frontend does not enforce any rules. The REST API is modular and clearly structured, and the database design supports data integrity and future expansion.
-
----
-
-## Use of AI Tools
-
-Limited use of AI tools was made during the development of this project to:
-- improve code readability through clearer comments,
-- review backend organisation and file structure,
-
-All system design decisions, implementation logic, database queries, and system
-integration were completed by the project team. AI tools were used strictly as a
-support mechanism for readability and organisation, not as a substitute for
-original development.
