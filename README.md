@@ -1,4 +1,4 @@
-# CMP5387 Library Loans Management System
+#  Library Loans Management System
 ## Project Overview
 This project implements a Library Loans Management System designed to solve common problems faced by libraries operating across multiple branches. These include inconsistent availability information, manual enforcement of borrowing rules, and difficulty tracking loans, reservations, and overdue items.
 
@@ -100,4 +100,5 @@ Reservations are based on queue order rather than predicted return times. The re
 
 
 ---
+
 
