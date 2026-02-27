@@ -90,7 +90,14 @@ Reservations are based on queue order rather than predicted return times. The re
 * Automatic reservation fulfilment logic when an item is checked back in.
 
 ## Screenshots
+![Login Screen](loginpage.png)
 
+![homepage](homepagelibrary.png)
+
+![reservation](reservation.png)
+
+![database](databaseimplement.png)
 
 
 ---
+
